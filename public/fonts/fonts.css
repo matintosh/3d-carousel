@@ -1,0 +1,54 @@
+@font-face {
+  font-family:"MarkPro";
+  src:  url("/fonts/markpro/mpr.woff") format("woff"),
+        url("/fonts/markpro/mpr.ttf") format("ttf"),
+        url("/fonts/markpro/mpr.woff2") format("woff2"),
+        url("/fonts/markpro/mpr.otf") format("otf"),
+	    url("/public/fonts/markpro/mpr.woff") format("woff"),
+	    url("/public/fonts/markpro/mpr.ttf") format("ttf"),
+	    url("/public/fonts/markpro/mpr.woff2") format("woff2"),
+      url("/public/fonts/markpro/mpr.otf") format("otf");
+  font-display: swap;
+}
+@font-face {
+  font-family:"MarkPro";
+  src: url("/fonts/markpro/mpb.woff") format("woff"),
+       url("/fonts/markpro/mpb.ttf") format("ttf"),
+       url("/fonts/markpro/mpb.woff2") format("woff2"),
+       url("/fonts/markpro/mpb.otf") format("otf"),
+	   url("/public/fonts/markpro/mpb.woff") format("woff"),
+	   url("/public/fonts/markpro/mpb.ttf") format("ttf"),
+	   url("/public/fonts/markpro/mpb.woff2") format("woff2"),
+	   url("/public/fonts/markpro/mpb.otf") format("otf");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:"MarkPro";
+  src: url("/fonts/markpro/mpbi.woff") format("woff"),
+       url("/fonts/markpro/mpbi.ttf") format("ttf"),
+       url("/fonts/markpro/mpbi.woff2") format("woff2"),
+       url("/fonts/markpro/mpbi.otf") format("otf"),
+  	   url("/public/fonts/markpro/mpbi.woff") format("woff"),
+  	   url("/public/fonts/markpro/mpbi.ttf") format("ttf"),
+  	   url("/public/fonts/markpro/mpbi.woff2") format("woff2"),
+  	   url("/public/fonts/markpro/mpbi.otf") format("otf");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family:"MarkPro";
+  src: url("/fonts/markpro/mpri.woff") format("woff"),
+       url("/fonts/markpro/mpri.ttf") format("ttf"),
+       url("/fonts/markpro/mpri.woff2") format("woff2"),
+       url("/fonts/markpro/mpri.otf") format("otf"),
+  	   url("/public/fonts/markpro/mpbi.woff") format("woff"),
+  	   url("/public/fonts/markpro/mpbi.ttf") format("ttf"),
+   	   url("/public/fonts/markpro/mpbi.woff2") format("woff2"),
+  	   url("/public/fonts/markpro/mpbi.otf") format("otf");
+  font-style: italic;
+  font-display: swap;
+}
