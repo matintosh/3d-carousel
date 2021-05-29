@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import Carousel from '../src/components/BlcCarousel'
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a className="title-link" href="https://nextjs.org">BacklotCars</a>
+          Welcome to <a className="title-link" href="https://nextjs.org">BacklotShips</a>
         </h1>
 
         <p className={styles.description}>
@@ -19,6 +20,10 @@ export default function Home() {
           <code className={styles.code}>pages/index.js</code>
         </p>
       </main>
+
+
+      <Carousel/>
+
 
       <footer className={styles.footer}>
         <a
