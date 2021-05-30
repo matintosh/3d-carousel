@@ -28,25 +28,25 @@ export const calculateHighlight = (i, n, l) => {
 };
 
 export const defaultShipsList = [
-    {
-      image: "/images/ship_1.png",
-    },
-    {
-      image: "/images/ship_2.png",
-    },
-    {
-      image: "/images/ship_3.png",
-    },
-    {
-      image: "/images/ship_4.png",
-    },
-    {
-      image: "/images/ship_5.png",
-    },
-    {
-      image: "/images/ship_6.png",
-    },
-    {
-      image: "/images/ship_7.png",
-    }
-  ];
+  {
+    image: "/images/ship_1.png",
+  },
+  {
+    image: "/images/ship_2.png",
+  },
+  {
+    image: "/images/ship_3.png",
+  },
+  {
+    image: "/images/ship_4.png",
+  },
+  {
+    image: "/images/ship_5.png",
+  },
+  {
+    image: "/images/ship_6.png",
+  },
+  {
+    image: "/images/ship_7.png",
+  },
+];
