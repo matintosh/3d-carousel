@@ -56,6 +56,12 @@
   color: #FEC40E;
 }
 
+@media( max-width: 480px ) {
+  .title {
+    font-size: 2rem;
+  }
+}
+
 .title,
 .description {
   text-align: center;
