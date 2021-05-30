@@ -5,10 +5,11 @@ import { calculateHighlight } from "../../utils/helpers";
 export const StyledCarousel = styled.div(({ length }) => [
   css`
     width: 100vw;
+    height: 1000px;
 
     perspective: 3000px;
     perspective-origin: 50% -50%;
-
+    transform: scale(0.8);
     padding-top: 15%;
 
     overflow: hidden;
@@ -27,6 +28,10 @@ export const StyledCarousel = styled.div(({ length }) => [
     }
     @media (max-width: 340px) {
       --item-width: 280px;
+    }
+
+    @media (max-width: 980px) {
+      transform: scale(1);
     }
   `,
 ]);
