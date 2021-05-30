@@ -16,7 +16,11 @@ export default function CarouselShips({
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    onChange(current % items.length);
+    if (current < 0) {
+      onChange(items.length - (Math.abs(current) % items.length));
+    } else {
+      onChange(current % items.length);
+    }
   }, [current]);
 
   if (items.length < 3)
