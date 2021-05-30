@@ -72,7 +72,7 @@ export const StyledShadow = styled.div(() => [
       rgba(0, 212, 255, 0) 50%
     );
 
-    z-index: 100;
+    z-index: 3;
   `,
 ]);
 
@@ -178,9 +178,15 @@ export const StyledButton = styled.button(() => [
     @keyframes appear {
       0% {
         bottom: -200px;
+        opacity: 0;
+      }
+      80% {
+        bottom: -40px;
+        opacity: 0;
       }
       100% {
         bottom: 0px;
+        opacity: 1;
       }
     }
 
