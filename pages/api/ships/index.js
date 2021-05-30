@@ -67,7 +67,7 @@ export default (req, res) => {
     case "GET":
       return res.json(ships);
     case "PUT":
-      ships = req.body.ships
+      ships = req.body.ships;
       return res.json(ships);
   }
 };
