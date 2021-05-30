@@ -1,39 +1,31 @@
+import { useState, useEffect } from "react";
 import { styled, css } from "twin.macro";
 
-const StyledDiv = styled.div(() => [
-  css`
-    width: 100vw;
-    height: 230px;
-    background-color: limegreen;
+import { defaultShipsList } from "../../utils/helpers";
+import Ship from "../Ship";
+import Carousel from "./Carousel";
+import Controllers from "./Controllers";
+import { StyledCarousel } from "./Styles";
 
-    display: flex;
-    justify-content: center;
+const DefaultListUI = defaultShipsList.map((i) => <Ship image={i.image} />);
 
-    position: relative;
-  `,
-]);
+export default function CarouselShips({
+  items = DefaultListUI,
+  onChange = () => {},
+}) {
+  const [current, setCurrent] = useState(0);
 
-const StyledImage = styled.img(() => [
-  css`
-    position: absolute;
-    bottom: 0;
-    
-    height: 140%;
-  `,
-]);
+  useEffect(() => {
+    onChange(current % items.length);
+  }, [current]);
 
-const defaultList = [
-  {
-    image: "/images/ship_1.png",
-  },
-];
+  if (items.length < 3)
+    return <p>This type of carousel does not support less than 3 items</p>;
 
-export default function Carousel({ items = defaultList }) {
   return (
-    <StyledDiv>
-      {items.map((i) => (
-        <StyledImage src={i.image} />
-      ))}
-    </StyledDiv>
+    <StyledCarousel length={items.length}>
+      <Carousel current={current} items={items} />
+      <Controllers onChange={setCurrent} current={current} />
+    </StyledCarousel>
   );
 }
