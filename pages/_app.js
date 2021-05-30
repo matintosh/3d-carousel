@@ -1,9 +1,13 @@
-import '../styles/globals.css';
+import { ShipsContextProvider } from '../src/context'
+import "../styles/globals.css";
+import "tailwindcss/tailwind.css";
 
-import 'tailwindcss/tailwind.css'
-
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function ShipsApp({ Component, pageProps }) {
+  return (
+    <ShipsContextProvider>
+      <Component {...pageProps} />
+    </ShipsContextProvider>
+  );
 }
 
-export default MyApp
+export default ShipsApp;
