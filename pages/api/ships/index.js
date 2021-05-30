@@ -57,6 +57,7 @@ let ships = [
     image_src: "/images/ship_7.png",
     img_alt: "ship 7",
   },
+  
 ];
 
 export default (req, res) => {
