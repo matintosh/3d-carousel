@@ -4,7 +4,9 @@ export const ShipsAppContext = createContext(null);
 
 export const ShipsContextProvider = ({ children }) => {
   const [ships, setShips] = useState([]);
+  const [editableShip, setEditableShip] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     (async () => {
@@ -15,7 +17,7 @@ export const ShipsContextProvider = ({ children }) => {
     })();
   }, []);
 
-  const editShips = async () => {
+  const editShips = async (shipsPayload) => {
     setLoading(true);
     const response = await fetch("/api/ships", {
       method: "PUT",
@@ -23,7 +25,7 @@ export const ShipsContextProvider = ({ children }) => {
         Accept: "application/json",
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ ships: [12, 3, 4, 56] }),
+      body: JSON.stringify({ ships: shipsPayload }),
     });
 
     const body = await response.json();
@@ -36,7 +38,15 @@ export const ShipsContextProvider = ({ children }) => {
 
     editShips(shipsCopy);
   };
-  const context = { ships, editShip, loading };
+  const context = {
+    ships,
+    editShip,
+    editableShip,
+    setEditableShip,
+    current,
+    setCurrent,
+    loading,
+  };
 
   return (
     <ShipsAppContext.Provider value={context}>
