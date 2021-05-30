@@ -28,7 +28,7 @@ export default function Ship({
   return (
     <StyledContainer active={active}>
       <StyledShip active={active} src={image} />
-      <StyledSign src={sign} />
+      <StyledSign src={`/images/${sign}.png`} />
       <StyledDescription>
         <StyledTitle>{title}</StyledTitle>
             {description}
