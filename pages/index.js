@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-import { Carousel, Ship } from "../src/components";
+import { Carousel, Ship, Indicator } from "../src/components";
 import styles from "../styles/Home.module.css";
 
 const shipsList = [
@@ -35,9 +35,14 @@ export default function Home() {
 
   const handleActiveShip = (n) => setActiveShip(n);
 
-  const ShipsUI = shipsList.map((i, idx) => (
-    <Ship active={activeShip === idx} image={i.image} />
-  ));
+  const ShipsUI = shipsList.map((i, idx) => {
+    return (
+      <Ship
+        active={(activeShip === 8 ? 0 : activeShip) === idx}
+        image={i.image}
+      />
+    );
+  });
 
   return (
     <div className={styles.container}>
@@ -61,7 +66,13 @@ export default function Home() {
       </main>
 
       <Carousel items={ShipsUI} onChange={handleActiveShip} />
-
+      <div style={{ width: '100%', margin: "50px 0"}}>
+        <Indicator
+          length={ShipsUI.length}
+          current={activeShip}
+          inverted={true}
+        />
+      </div>
       <footer className={styles.footer}>
         <a href="https://nextjs.org" target="_blank" rel="noopener noreferrer">
           Powered by{" "}
