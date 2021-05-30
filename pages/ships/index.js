@@ -1,40 +1,22 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Carousel, Ship, Indicator } from "../../src/components";
+import { ShipsAppContext } from "../../src/context";
 import { StyledContainer } from "./Styles";
-const shipsList = [
-  {
-    image: "/images/ship_1.png",
-  },
-  {
-    image: "/images/ship_2.png",
-  },
-  {
-    image: "/images/ship_3.png",
-  },
-  {
-    image: "/images/ship_4.png",
-  },
-  {
-    image: "/images/ship_5.png",
-  },
-  {
-    image: "/images/ship_6.png",
-  },
-  {
-    image: "/images/ship_7.png",
-  },
-];
 
 export default function Ships() {
+  const { ships } = useContext(ShipsAppContext);
   const [activeShip, setActiveShip] = useState(0);
 
   const handleActiveShip = (n) => setActiveShip(n);
 
-  const ShipsUI = shipsList.map((i, idx) => {
+  const ShipsUI = ships.map((i, idx) => {
     return (
       <Ship
         active={(activeShip === 8 ? 0 : activeShip) === idx}
-        image={i.image}
+        image={i.image_src}
+        name={i.name}
+        description={i.description}
+        sign={i.side}
       />
     );
   });
