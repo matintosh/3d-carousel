@@ -1,5 +1,5 @@
 import { useContext, useState, useEffect } from "react";
-import tw from "twin.macro";
+import { styled } from "twin.macro";
 import { ShipsAppContext } from "../../context";
 import { StyledButton } from "../Ship/Styles";
 import {
@@ -28,7 +28,14 @@ export default function ShipModal() {
   }, [editableShip]);
   const active = !!editableShip;
 
-  const SaveAndCloseButton = tw(StyledButton)` mb-5`;
+  const SaveAndCloseButton = styled(StyledButton)`
+    animation: none;
+    margin-bottom: 21px;
+
+    &:hover {
+      animation: none;
+    }
+  `;
 
   return (
     <StyledModalContainer active={active}>

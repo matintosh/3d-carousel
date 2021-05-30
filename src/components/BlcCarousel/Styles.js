@@ -10,7 +10,7 @@ export const StyledCarousel = styled.div(({ length }) => [
     perspective: 3000px;
     perspective-origin: 50% -50%;
     transform: scale(0.8);
-    padding-top: 15%;
+    padding-top: 6%;
 
     overflow: hidden;
 
@@ -32,6 +32,10 @@ export const StyledCarousel = styled.div(({ length }) => [
 
     @media (max-width: 980px) {
       transform: scale(1);
+    }
+
+    @media (max-width: 1600px) {
+      transform: scale(0.8);
     }
   `,
 ]);

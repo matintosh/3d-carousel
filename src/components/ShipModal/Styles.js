@@ -103,6 +103,58 @@ export const StyledShip = styled.img(() => [
     top: 80px;
 
     z-index: 2;
+
+
+
+
+    animation: fly 5s infinite ease-in-out, fly-rotate 5s infinite;
+
+    @keyframes fly {
+        0% {
+        top: 80px;
+        }
+        50% {
+        top: 50px;
+        }
+        100% {
+        top: 80px;
+        }
+    }
+    @media ( max-width: 1440px ) {
+        top: 20px;
+
+        @keyframes fly {
+          0% {
+            top: -20px;
+          }
+          50% {
+            top: 20px;
+          }
+          100% {
+            top: -20px;
+          }
+        }
+
+    }
+
+        @keyframes fly-rotate {
+          0% {
+            transform: rotateZ(0deg);
+          }
+          25% {
+            transform: rotateZ(-1deg);
+          }
+
+          50% {
+            transform: rotateZ(0deg);
+          }
+
+          75% {
+            transform: rotateZ(1deg);
+          }
+          100% {
+            transform: rotateZ(0deg);
+          }
   `,
 ]);
 

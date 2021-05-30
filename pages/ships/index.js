@@ -4,7 +4,7 @@ import { ShipsAppContext } from "../../src/context";
 import { StyledContainer } from "./Styles";
 
 export default function Ships() {
-  const { ships, loading } = useContext(ShipsAppContext);
+  const { ships } = useContext(ShipsAppContext);
   const [activeShip, setActiveShip] = useState(0);
 
   const handleActiveShip = (n) => setActiveShip(n);
