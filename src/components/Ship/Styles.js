@@ -1,3 +1,13 @@
+/*
+    z-index strategy
+
+    Button: 4
+    Ship: 3
+    Description shadow 3
+    Sign: 2
+    Description card: 1
+*/
+
 import tw, { css, styled } from "twin.macro";
 
 // Container
