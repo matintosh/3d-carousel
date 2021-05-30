@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { Carousel, Ship, Indicator } from "../../src/components";
+import { Carousel, Ship, Indicator, ShipModal } from "../../src/components";
 import { ShipsAppContext } from "../../src/context";
 import { StyledContainer } from "./Styles";
 
@@ -17,20 +17,33 @@ export default function Ships() {
         name={i.name}
         description={i.description}
         sign={i.side}
+        index={idx}
       />
     );
   });
   return (
-    <StyledContainer>
-      {!!ships.length && <Carousel items={ShipsUI} onChange={handleActiveShip} />}
+    <>
+      <StyledContainer>
+        {!!ships.length && (
+          <Carousel items={ShipsUI} onChange={handleActiveShip} />
+        )}
 
-      <div style={{ width: "100%", margin: "50px 0" }}>
-        <Indicator
-          length={ShipsUI.length}
-          current={activeShip}
-          inverted={true}
-        />
-      </div>
-    </StyledContainer>
+        <div
+          style={{
+            width: "100%",
+            margin: "50px 0",
+            position: "absolute",
+            bottom: 0,
+          }}
+        >
+          <Indicator
+            length={ShipsUI.length}
+            current={activeShip}
+            inverted={true}
+          />
+        </div>
+      </StyledContainer>
+      <ShipModal />
+    </>
   );
 }
