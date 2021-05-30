@@ -1,4 +1,5 @@
 import tw, { css, styled } from "twin.macro";
+import { StyledButton } from "../Ship/Styles";
 
 // Ship modal
 export const StyledModalContainer = styled.div(({ active }) => [
@@ -104,57 +105,54 @@ export const StyledShip = styled.img(() => [
 
     z-index: 2;
 
-
-
-
     animation: fly 5s infinite ease-in-out, fly-rotate 5s infinite;
 
     @keyframes fly {
+      0% {
+        top: 40px;
+      }
+      50% {
+        top: 20px;
+      }
+      100% {
+        top: 40px;
+      }
+    }
+    @media (max-width: 1440px) {
+      top: 20px;
+
+      @keyframes fly {
         0% {
-        top: 80px;
+          top: -20px;
         }
         50% {
-        top: 50px;
+          top: 20px;
         }
         100% {
-        top: 80px;
+          top: -20px;
         }
-    }
-    @media ( max-width: 1440px ) {
-        top: 20px;
-
-        @keyframes fly {
-          0% {
-            top: -20px;
-          }
-          50% {
-            top: 20px;
-          }
-          100% {
-            top: -20px;
-          }
-        }
-
+      }
     }
 
-        @keyframes fly-rotate {
-          0% {
-            transform: rotateZ(0deg);
-          }
-          25% {
-            transform: rotateZ(-1deg);
-          }
+    @keyframes fly-rotate {
+      0% {
+        transform: rotateZ(0deg);
+      }
+      25% {
+        transform: rotateZ(-1deg);
+      }
 
-          50% {
-            transform: rotateZ(0deg);
-          }
+      50% {
+        transform: rotateZ(0deg);
+      }
 
-          75% {
-            transform: rotateZ(1deg);
-          }
-          100% {
-            transform: rotateZ(0deg);
-          }
+      75% {
+        transform: rotateZ(1deg);
+      }
+      100% {
+        transform: rotateZ(0deg);
+      }
+    }
   `,
 ]);
 
@@ -216,3 +214,12 @@ export const StyledTextArea = styled.textarea(() => [
     resize: vertical;
   `,
 ]);
+
+export const SaveAndCloseButton = styled(StyledButton)`
+  animation: none;
+  margin-bottom: 21px;
+
+  &:hover {
+    animation: none;
+  }
+`;

@@ -11,6 +11,7 @@ import {
   StyledForm,
   StyledInput,
   StyledTextArea,
+  SaveAndCloseButton
 } from "./Styles";
 
 export default function ShipModal() {
@@ -27,15 +28,6 @@ export default function ShipModal() {
     }
   }, [editableShip]);
   const active = !!editableShip;
-
-  const SaveAndCloseButton = styled(StyledButton)`
-    animation: none;
-    margin-bottom: 21px;
-
-    &:hover {
-      animation: none;
-    }
-  `;
 
   return (
     <StyledModalContainer active={active}>
