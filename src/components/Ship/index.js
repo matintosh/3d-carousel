@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { ShipsAppContext } from "../../context";
 import {
   StyledContainer,
   StyledShip,
@@ -25,17 +27,19 @@ export default function Ship({
   title = defaults.title,
   description = defaults.description,
 }) {
+  const { editShips } = useContext(ShipsAppContext);
+  
   return (
     <StyledContainer active={active}>
       <StyledShip active={active} src={image} />
       <StyledSign src={`/images/${sign}.png`} />
       <StyledDescription>
         <StyledTitle>{title}</StyledTitle>
-            {description}
+        {description}
         <StyledShadow />
       </StyledDescription>
       {active && (
-        <StyledButton>
+        <StyledButton onClick={editShips}>
           Edit
           <StyledPencil>✎</StyledPencil>
         </StyledButton>

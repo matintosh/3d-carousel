@@ -4,7 +4,7 @@ import { ShipsAppContext } from "../../src/context";
 import { StyledContainer } from "./Styles";
 
 export default function Ships() {
-  const { ships } = useContext(ShipsAppContext);
+  const { ships, loading } = useContext(ShipsAppContext);
   const [activeShip, setActiveShip] = useState(0);
 
   const handleActiveShip = (n) => setActiveShip(n);
@@ -22,7 +22,8 @@ export default function Ships() {
   });
   return (
     <StyledContainer>
-      <Carousel items={ShipsUI} onChange={handleActiveShip} />
+      {!!ships.length && <Carousel items={ShipsUI} onChange={handleActiveShip} />}
+
       <div style={{ width: "100%", margin: "50px 0" }}>
         <Indicator
           length={ShipsUI.length}
