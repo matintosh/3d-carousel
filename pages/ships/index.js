@@ -12,7 +12,7 @@ export default function Ships() {
   const ShipsUI = ships.map((i, idx) => {
     return (
       <Ship
-        active={(activeShip === 8 ? 0 : activeShip) === idx}
+        active={(activeShip === ships.length ? 0 : activeShip) === idx}
         image={i.image_src}
         name={i.name}
         description={i.description}
