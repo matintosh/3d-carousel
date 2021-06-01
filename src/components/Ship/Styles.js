@@ -88,9 +88,10 @@ export const StyledSign = styled.img(() => [
     z-index: 2;
   `,
 ]);
+
 export const StyledTitle = tw.p`text-white text-2xl m-0 font-bold mb-3 z-10 w-full`;
 
-export const StyledShip = styled.img(({ active }) => [
+export const StyledShip = styled.img(({ active, index, appearDuration = 200 }) => [
   css`
     width: 100%;
     max-height: 300px;
@@ -105,10 +106,32 @@ export const StyledShip = styled.img(({ active }) => [
     filter: drop-shadow(0px 160px 40px #000000aa);
 
     z-index: 3;
+
+    animation: ship-appear ${appearDuration}ms ${appearDuration * index}ms ease-in-out,
+      ship-opacity ${appearDuration * index}ms;
+
+    @keyframes ship-opacity {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+    
+    @keyframes ship-appear {
+      0% {
+        transform: scale(0) translateX(-100%);
+      }
+      100% {
+        transform: scale(1) translateX(0%);
+      }
+    }
   `,
   active
     ? css`
-        animation: fly 5s infinite ease-in-out, fly-rotate 5s infinite;
+        animation: fly 5s infinite ease-in-out, fly-rotate 5s infinite,
+          ship-appear 0.5s ease-in-out;
 
         @keyframes fly {
           0% {

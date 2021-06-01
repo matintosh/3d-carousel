@@ -13,10 +13,10 @@ import {
 
 export default function Ship(props) {
   const { setEditableShip } = useContext(ShipsAppContext);
-
+  
   return (
     <StyledContainer active={props.active}>
-      <StyledShip active={props.active} src={props.image} alt={props.img_alt} />
+      <StyledShip active={props.active} src={props.image} alt={props.img_alt} index={props?.index ?? 1}/>
       <StyledSign src={`/images/${props.sign}.png`} alt={props.sign} />
       <StyledDescription>
         <StyledTitle>{props.name}</StyledTitle>
