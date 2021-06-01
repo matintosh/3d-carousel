@@ -91,82 +91,87 @@ export const StyledSign = styled.img(() => [
 
 export const StyledTitle = tw.p`text-white text-2xl m-0 font-bold mb-3 z-10 w-full`;
 
-export const StyledShip = styled.img(({ active, index, appearDuration = 200 }) => [
-  css`
-    width: 100%;
-    max-height: 300px;
-    object-fit: contain;
+export const StyledShip = styled.img(
+  ({ active, index, appearDuration = 200 }) => [
+    css`
+      width: 100%;
+      max-height: 300px;
+      object-fit: contain;
 
-    position: absolute;
-    top: 80px;
+      position: absolute;
+      top: 80px;
 
-    transform: rotateZ(0deg);
+      transform: rotateZ(0deg);
 
-    /* MORE ACURATED SHIP SHADOW :P */
-    filter: drop-shadow(0px 160px 40px #000000aa);
+      /* MORE ACURATED SHIP SHADOW :P */
+      filter: drop-shadow(0px 160px 40px #000000aa);
 
-    z-index: 3;
+      z-index: 3;
 
-    animation: ship-appear ${appearDuration}ms ${appearDuration * index}ms ease-in-out,
-      ship-opacity ${appearDuration * index}ms;
+      animation: ship-appear ${appearDuration}ms ${appearDuration * index}ms
+          ease-in-out,
+        ship-opacity ${appearDuration * index}ms;
 
-    @keyframes ship-opacity {
-      0% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 0;
-      }
-    }
-    
-    @keyframes ship-appear {
-      0% {
-        transform: scale(0) translateX(-100%);
-      }
-      100% {
-        transform: scale(1) translateX(0%);
-      }
-    }
-  `,
-  active
-    ? css`
-        animation: fly 5s infinite ease-in-out, fly-rotate 5s infinite,
-          ship-appear 0.5s ease-in-out;
-
-        @keyframes fly {
-          0% {
-            top: 80px;
-          }
-          50% {
-            top: 50px;
-          }
-          100% {
-            top: 80px;
-          }
+      @keyframes ship-opacity {
+        0% {
+          opacity: 0;
         }
-
-        @keyframes fly-rotate {
-          0% {
-            transform: rotateZ(0deg);
-          }
-          25% {
-            transform: rotateZ(-1deg);
-          }
-
-          50% {
-            transform: rotateZ(0deg);
-          }
-
-          75% {
-            transform: rotateZ(1deg);
-          }
-          100% {
-            transform: rotateZ(0deg);
-          }
+        100% {
+          opacity: 0;
         }
-      `
-    : null,
-]);
+      }
+
+      @keyframes ship-appear {
+        0% {
+          transform: scale(0) translateX(-100%);
+        }
+        100% {
+          transform: scale(1) translateX(0%);
+        }
+      }
+    `,
+    active
+      ? css`
+          animation: fly 5s infinite ease-in-out, fly-rotate 5s infinite,
+            ship-appear ${appearDuration}ms ${appearDuration * index}ms
+              ease-in-out,
+            ship-opacity ${appearDuration * index}ms;
+
+          @keyframes fly {
+            0% {
+              top: 80px;
+            }
+            50% {
+              top: 50px;
+            }
+            100% {
+              top: 80px;
+            }
+          }
+
+          @keyframes fly-rotate {
+            0% {
+              transform: rotateZ(0deg);
+            }
+            25% {
+              transform: rotateZ(-1deg);
+            }
+
+            50% {
+              transform: rotateZ(0deg);
+            }
+
+            75% {
+              transform: rotateZ(1deg);
+            }
+            100% {
+              transform: rotateZ(0deg);
+            }
+          }
+        `
+      : null,
+  ]
+);
 
 // Edit button
 export const StyledButton = styled.button(() => [
